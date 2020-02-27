@@ -331,6 +331,11 @@ public class ActionBarUtils {
         setHomeAsUpButton(0, 0, ocl);
     }
 
+    public void setHomeAsUpButtonVisible(boolean visible) {
+        toolbarHomeButton.setVisibility(visible ? View.VISIBLE : View.GONE);
+        toolbar.setPaddingRelative(visible ? 0 : activity.getResources().getDimensionPixelSize(R.dimen.sesl_action_bar_content_inset), 0, 0, 0);
+    }
+
     public void setHomeAsUpButton(int iconResId, int contentDescResId, View.OnClickListener ocl) {
         if (toolbarHomeButton != null) {
             toolbarHomeButton.setVisibility(View.VISIBLE);

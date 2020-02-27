@@ -91,6 +91,7 @@ public class AppDownload extends AsyncTask<Void, Integer, String> {
 
             Cursor cursor = mDownloadManager.query(q);
             cursor.moveToFirst();
+
             try {
                 if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) != DownloadManager.STATUS_RUNNING) {
                     mIsRunning = false;

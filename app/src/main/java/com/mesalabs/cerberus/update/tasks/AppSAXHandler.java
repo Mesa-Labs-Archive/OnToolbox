@@ -69,9 +69,6 @@ public class AppSAXHandler extends DefaultHandler {
         } else if (qName.equalsIgnoreCase("download-link")) {
             tempAddon.setDownloadLink(tempVal);
             LogUtils.d(TAG, "Download Link = " + tempVal);
-        } else if (qName.equalsIgnoreCase("size")) {
-            tempAddon.setFilesize(Integer.parseInt(tempVal));
-            LogUtils.d(TAG, "Size = " + tempVal);
         }
     }
 
