@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.mesalabs.cerberus.R;
 import com.mesalabs.cerberus.base.BaseAppBarActivity;
+import com.mesalabs.cerberus.ui.callback.OnSingleClickListener;
 import com.samsung.android.ui.preference.SeslPreference;
 import com.samsung.android.ui.preference.SeslPreferenceFragmentCompat;
 
@@ -38,9 +39,9 @@ public class CreditsActivity extends BaseAppBarActivity {
         setContentView(R.layout.mesa_layout_creditsactivity);
 
         appBar.setTitleText(getString(R.string.mesa_credits));
-        appBar.setHomeAsUpButton(new View.OnClickListener() {
+        appBar.setHomeAsUpButton(new OnSingleClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onSingleClick(View view) {
                 onBackPressed();
             }
         });

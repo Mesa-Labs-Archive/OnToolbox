@@ -11,6 +11,7 @@ import java.nio.charset.StandardCharsets;
 
 import com.mesalabs.cerberus.R;
 import com.mesalabs.cerberus.base.BaseToolbarActivity;
+import com.mesalabs.cerberus.ui.callback.OnSingleClickListener;
 import com.mesalabs.cerberus.utils.LogUtils;
 
 /*
@@ -40,9 +41,9 @@ public class OpenSourceLicenseActivity extends BaseToolbarActivity {
         setContentView(mWebView);
 
         toolBar.setTitleText(getString(R.string.mesa_open_source_licence));
-        toolBar.setHomeAsUpButton(new View.OnClickListener() {
+        toolBar.setHomeAsUpButton(new OnSingleClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onSingleClick(View view) {
                 finish();
             }
         });
