@@ -6,8 +6,8 @@ import android.content.res.ColorStateList;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 
-import com.mesalabs.cerberus.R;
-import com.mesalabs.cerberus.utils.LogUtils;
+import com.mesalabs.on.toolbox.R;
+import com.mesalabs.on.toolbox.utils.LogUtils;
 import com.mesalabs.cerberus.utils.Utils;
 import com.samsung.android.ui.widget.SeslCheckedTextView;
 

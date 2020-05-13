@@ -8,8 +8,8 @@ import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.View;
 
-import com.mesalabs.cerberus.R;
-import com.mesalabs.cerberus.utils.LogUtils;
+import com.mesalabs.on.toolbox.R;
+import com.mesalabs.on.toolbox.utils.LogUtils;
 import com.samsung.android.ui.widget.SeslSeekBar;
 
 /*

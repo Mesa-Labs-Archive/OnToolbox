@@ -13,12 +13,12 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
-import com.mesalabs.cerberus.CerberusApp;
-import com.mesalabs.cerberus.R;
+import com.mesalabs.on.toolbox.OnToolboxApp;
+import com.mesalabs.on.toolbox.R;
 import com.mesalabs.cerberus.update.data.AppData;
 import com.mesalabs.cerberus.update.download.AppDownload;
 import com.mesalabs.cerberus.update.tasks.AppXMLParser;
-import com.mesalabs.cerberus.utils.LogUtils;
+import com.mesalabs.on.toolbox.utils.LogUtils;
 
 /*
  * Cerberus Core App
@@ -85,7 +85,7 @@ public class AppUpdateUtils {
         int newStatus = STATE_ERROR;
 
         if (appsDataArr != null && !appsDataArr.isEmpty()) {
-            int currentVer = CerberusApp.getAppVersionCode();
+            int currentVer = OnToolboxApp.getAppVersionCode();
             int onlineVer = 0;
 
             for (int i = 0; i < appsDataArr.size(); i++) {

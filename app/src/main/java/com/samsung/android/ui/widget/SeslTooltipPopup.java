@@ -18,8 +18,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.view.ContextThemeWrapper;
 
-import com.mesalabs.cerberus.R;
-import com.mesalabs.cerberus.utils.LogUtils;
+import com.mesalabs.on.toolbox.R;
+import com.mesalabs.on.toolbox.utils.LogUtils;
 
 /*
  * Cerberus Core App

@@ -1,4 +1,4 @@
-package com.mesalabs.cerberus.activity;
+package com.mesalabs.on.toolbox.activity.aboutpage;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -9,13 +9,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-import com.mesalabs.cerberus.R;
 import com.mesalabs.cerberus.base.BaseToolbarActivity;
 import com.mesalabs.cerberus.ui.callback.OnSingleClickListener;
-import com.mesalabs.cerberus.utils.LogUtils;
+import com.mesalabs.on.toolbox.R;
+import com.mesalabs.on.toolbox.utils.LogUtils;
 
 /*
- * Cerberus Core App
+ * On Toolbox
  *
  * Coded by BlackMesa @2020
  *

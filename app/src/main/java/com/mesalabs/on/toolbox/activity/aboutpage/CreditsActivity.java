@@ -1,21 +1,19 @@
-package com.mesalabs.cerberus.activity;
+package com.mesalabs.on.toolbox.activity.aboutpage;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.mesalabs.cerberus.R;
 import com.mesalabs.cerberus.base.BaseAppBarActivity;
 import com.mesalabs.cerberus.ui.callback.OnSingleClickListener;
-import com.samsung.android.ui.preference.SeslPreference;
+import com.mesalabs.on.toolbox.R;
 import com.samsung.android.ui.preference.SeslPreferenceFragmentCompat;
 
 /*
- * Cerberus Core App
+ * On Toolbox
  *
  * Coded by BlackMesa @2020
  *

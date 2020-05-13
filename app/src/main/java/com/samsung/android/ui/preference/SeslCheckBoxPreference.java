@@ -11,7 +11,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import androidx.core.content.res.TypedArrayUtils;
 
-import com.mesalabs.cerberus.R;
+import com.mesalabs.on.toolbox.R;
 
 /*
  * Cerberus Core App

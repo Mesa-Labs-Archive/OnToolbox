@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mesa_tb_primary_color_dark">#EEBC09</color>
+    <color name="mesa_tb_primary_color_light">#EEBC09</color>
+    <color name="mesa_tb_primary_dark_color_dark">#F0C212</color>
+    <color name="mesa_tb_primary_dark_color_light">#ECB500</color>
+    <color name="mesa_tb_control_activated_color">#F0C212</color>
+    <color name="mesa_tb_progress_control_color_activated_dark">#EEBC09</color>
+    <color name="mesa_tb_progress_control_color_activated_light">#EEBC09</color>
+    <color name="mesa_tb_progress_control_color_normal_dark">#4DEEBC09</color>
+    <color name="mesa_tb_progress_control_color_normal_light">#4DEEBC09</color>
+
+    <color name="mesa_tb_drawer_dim_color">#59000000</color>
+</resources>

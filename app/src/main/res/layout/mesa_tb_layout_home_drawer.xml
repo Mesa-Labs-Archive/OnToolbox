@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/mesa_parent_home_drawer"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <LinearLayout android:id="@+id/mesa_header_home_drawer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="64.0dip" android:paddingHorizontal="32.0dip" android:orientation="horizontal" android:baselineAligned="false" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent">
+        <ImageView android:id="@+id/mesa_settings_home_drawer" android:background="?android:selectableItemBackgroundBorderless" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_gravity="center_vertical" android:src="@drawable/sesl_ic_search_api" android:tint="#797979" android:tooltipText="@string/mesa_settings" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:id="@+id/mesa_scrollview_home_drawer"
+        android:layout_marginTop="16.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/mesa_header_home_drawer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24.0dip"
+            android:text="Cantami, o diva, del Pelìde Achille
+l’ira funesta che infiniti addusse
+lutti agli achei , molte anzi tempo all’orco
+generose travolse alme d’eroi,
+e di cani e d’augelli orrido pasto
+lor salme abbandonò (così di giove
+l’alto consiglio s’adempia ) , da quando
+primamente disgiunse aspra contesa
+il re de’ prodi Atride e il divo Achille."
+            android:textSize="35sp"/>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

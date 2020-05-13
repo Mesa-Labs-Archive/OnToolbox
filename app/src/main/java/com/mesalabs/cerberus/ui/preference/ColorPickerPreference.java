@@ -11,7 +11,7 @@ import android.util.AttributeSet;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import com.mesalabs.cerberus.R;
+import com.mesalabs.on.toolbox.R;
 import com.mesalabs.cerberus.utils.Utils;
 import com.samsung.android.ui.picker.app.SeslColorPickerDialog;
 import com.samsung.android.ui.preference.internal.SeslPreferenceImageView;
@@ -75,7 +75,7 @@ public class ColorPickerPreference extends SeslPreference implements SeslPrefere
     }
 
     private void init(Context context, AttributeSet attrs) {
-        setWidgetLayoutResource(R.layout.mesa_colorpickerpref_widget_layout);
+        setWidgetLayoutResource(R.layout.mesa_preference_colorpickerpref_widget_layout);
 
         setOnPreferenceClickListener(this);
 

@@ -1,11 +1,11 @@
-package com.mesalabs.cerberus.utils;
+package com.mesalabs.on.toolbox.utils;
 
 import android.util.Log;
 
-import com.mesalabs.cerberus.CerberusApp;
+import com.mesalabs.on.toolbox.OnToolboxApp;
 
 /*
- * Cerberus Core App
+ * On Toolbox
  *
  * Coded by BlackMesa @2020
  *
@@ -22,51 +22,51 @@ import com.mesalabs.cerberus.CerberusApp;
 public class LogUtils {
     // Verbose
     public static void v(String tag, String msg) {
-        if (CerberusApp.isDebugBuild())
-            Log.v("CerberusCore: " + tag, msg);
+        if (OnToolboxApp.isDebugBuild())
+            Log.v("OnToolbox: " + tag, msg);
     }
 
     // Debug
     public static void d(String tag, String msg) {
-        if (CerberusApp.isDebugBuild())
-            Log.d("CerberusCore: " + tag, msg);
+        if (OnToolboxApp.isDebugBuild())
+            Log.d("OnToolbox: " + tag, msg);
     }
 
     public static void d(String tag, String msg, Exception e) {
-        if (CerberusApp.isDebugBuild())
-            Log.d("CerberusCore: " + tag, msg, e);
+        if (OnToolboxApp.isDebugBuild())
+            Log.d("OnToolbox: " + tag, msg, e);
     }
 
     public static void d(String tag, String msg, Throwable t) {
-        if (CerberusApp.isDebugBuild())
-            Log.d("CerberusCore: " + tag, msg, t);
+        if (OnToolboxApp.isDebugBuild())
+            Log.d("OnToolbox: " + tag, msg, t);
     }
 
     // Info
     public static void i(String tag, String msg) {
-        if (CerberusApp.isDebugBuild())
-            Log.i("CerberusCore: " + tag, msg);
+        if (OnToolboxApp.isDebugBuild())
+            Log.i("OnToolbox: " + tag, msg);
     }
 
     public static void i(String tag, String msg, Exception e) {
-        if (CerberusApp.isDebugBuild())
-            Log.i("CerberusCore: " + tag, msg, e);
+        if (OnToolboxApp.isDebugBuild())
+            Log.i("OnToolbox: " + tag, msg, e);
     }
 
     // Warn
     public static void w(String tag, String msg) {
-        if (CerberusApp.isDebugBuild())
-            Log.w("CerberusCore: " + tag, msg);
+        if (OnToolboxApp.isDebugBuild())
+            Log.w("OnToolbox: " + tag, msg);
     }
 
     public static void w(String tag, String msg, Exception e) {
-        if (CerberusApp.isDebugBuild())
-            Log.w("CerberusCore: " + tag, msg, e);
+        if (OnToolboxApp.isDebugBuild())
+            Log.w("OnToolbox: " + tag, msg, e);
     }
 
     // Error
     public static void e(String tag, String msg) {
-        if (CerberusApp.isDebugBuild())
-            Log.e("CerberusCore: " + tag, msg);
+        if (OnToolboxApp.isDebugBuild())
+            Log.e("OnToolbox: " + tag, msg);
     }
 }

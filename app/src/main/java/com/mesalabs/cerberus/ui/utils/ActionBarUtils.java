@@ -24,10 +24,10 @@ import java.util.Locale;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.mesalabs.cerberus.R;
+import com.mesalabs.on.toolbox.R;
 import com.mesalabs.cerberus.ui.widget.ToolbarImageButton;
 import com.mesalabs.cerberus.utils.CerberusException;
-import com.mesalabs.cerberus.utils.LogUtils;
+import com.mesalabs.on.toolbox.utils.LogUtils;
 import com.mesalabs.cerberus.utils.Utils;
 import com.mesalabs.cerberus.utils.ViewUtils;
 import com.samsung.android.ui.appbar.SeslAppBarLayout;
@@ -257,7 +257,7 @@ public class ActionBarUtils {
 
     private void initMoreMenuButtonBadge(int count) {
         if (moreOverflowBadgeBackground == null) {
-            moreOverflowBadgeBackground = (ViewGroup) ((LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.mesa_menu_button_badge_layout, overflowContainer, false);
+            moreOverflowBadgeBackground = (ViewGroup) ((LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.mesa_view_menu_button_badge_layout, overflowContainer, false);
             moreOverflowBadgeText = (TextView) moreOverflowBadgeBackground.getChildAt(0);
             moreOverflowBadgeText.setTextSize(0, (float) ((int) activity.getResources().getDimension(R.dimen.sesl_menu_item_badge_text_size)));
             moreOverflowButtonContainer.addView(moreOverflowBadgeBackground);
@@ -490,7 +490,7 @@ public class ActionBarUtils {
             PopupMenuItem itemVar;
 
             if (view == null) {
-                view = ((LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.mesa_menu_popup_item_layout, parent, false);
+                view = ((LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.mesa_view_menu_popup_item_layout, parent, false);
                 itemVar = new PopupMenuItem(this);
                 itemVar.titleText = view.findViewById(R.id.mesa_titletext_moremenupopup);
                 itemVar.badgeIcon = view.findViewById(R.id.mesa_badgetext_moremenupopup);

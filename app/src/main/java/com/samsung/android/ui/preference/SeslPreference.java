@@ -28,8 +28,8 @@ import java.util.Set;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.res.TypedArrayUtils;
 
-import com.mesalabs.cerberus.R;
-import com.mesalabs.cerberus.utils.LogUtils;
+import com.mesalabs.on.toolbox.R;
+import com.mesalabs.on.toolbox.utils.LogUtils;
 import com.samsung.android.ui.preference.internal.SeslPreferenceImageView;
 
 /*

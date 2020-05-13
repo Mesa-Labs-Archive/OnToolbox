@@ -1,8 +1,4 @@
 <resources>
-    <string name="mesa_cerberuscore">Cerberus Core</string>
-
-    <string name="mesa_cerberustestux">Cerberus UI Test</string>
-
     <string name="mesa_pleasewait">Please wait…</string>
     <string name="mesa_cancel">Cancel</string>
 

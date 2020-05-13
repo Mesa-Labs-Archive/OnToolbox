@@ -1,10 +1,10 @@
-package com.mesalabs.cerberus;
+package com.mesalabs.on.toolbox;
 
 import android.app.Application;
 import android.content.Context;
 
 /*
- * Cerberus Core App
+ * On Toolbox
  *
  * Coded by BlackMesa @2020
  *
@@ -18,20 +18,20 @@ import android.content.Context;
  * EXTERNALS IS PROHIBITED AND WILL BE PUNISHED WITH ANAL ABUSE.
  */
 
-public class CerberusApp extends Application {
-    private static CerberusApp mAppInstance;
+public class OnToolboxApp extends Application {
+    private static OnToolboxApp mAppInstance;
     private static Context mAppContext;
 
     public static Context getAppContext() {
         return mAppContext;
     }
 
-    public static CerberusApp getAppInstance() {
+    public static OnToolboxApp getAppInstance() {
         return mAppInstance;
     }
 
     public static String getAppName() {
-        return mAppInstance.getString(R.string.mesa_cerberuscore);
+        return mAppInstance.getString(R.string.mesa_ontoolbox);
     }
 
     public static String getAppPackageName() {
