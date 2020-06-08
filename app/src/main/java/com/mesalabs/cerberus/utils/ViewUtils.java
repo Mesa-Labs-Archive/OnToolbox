@@ -16,8 +16,8 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.mesalabs.on.toolbox.R;
-import com.mesalabs.on.toolbox.utils.LogUtils;
+import com.mesalabs.on.workshop.R;
+import com.mesalabs.on.workshop.utils.LogUtils;
 
 /*
  * Cerberus Core App
@@ -271,7 +271,7 @@ public class ViewUtils {
     }
 
     public static void resolvePadding(ViewGroup viewGroup) {
-        Utils.genericInvokeMethod(viewGroup, "resolvePadding");
+        Utils.genericInvokeMethod(ViewGroup.class, viewGroup, "resolvePadding");
     }
 
     public static Object semGetHoverPopup(View view, boolean z) {

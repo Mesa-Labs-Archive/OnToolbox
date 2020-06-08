@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.mesalabs.on.workshop.ui.drawer.DrawerDotLine android:id="@+id/divider" android:layout_width="fill_parent" android:layout_height="@dimen/mesa_tb_drawer_item_divider_size" android:layout_marginHorizontal="@dimen/mesa_tb_drawer_padding_horizontal"/>
+</FrameLayout>

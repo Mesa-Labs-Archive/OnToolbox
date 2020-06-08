@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 
-import com.mesalabs.on.toolbox.R;
+import com.mesalabs.on.workshop.R;
 import com.samsung.android.ui.widget.SeslSeekBar;
 
 /*

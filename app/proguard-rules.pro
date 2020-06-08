@@ -22,3 +22,6 @@
 
 # SeslAppBarLayout
 -keep class com.samsung.android.ui.appbar.** { *; }
+
+# On Workshop
+-keep class com.mesalabs.on.workshop.fragment.home.** { *; }

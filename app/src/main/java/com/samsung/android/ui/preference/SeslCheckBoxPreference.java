@@ -7,11 +7,10 @@ import android.view.View;
 import android.view.accessibility.AccessibilityManager;
 import android.widget.Checkable;
 import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import androidx.core.content.res.TypedArrayUtils;
 
-import com.mesalabs.on.toolbox.R;
+import com.mesalabs.on.workshop.R;
 
 /*
  * Cerberus Core App

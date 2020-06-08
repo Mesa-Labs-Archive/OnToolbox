@@ -6,36 +6,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     
-    <LinearLayout android:id="@+id/mesa_header_home_drawer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="64.0dip" android:paddingHorizontal="32.0dip" android:orientation="horizontal" android:baselineAligned="false" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent">
-        <ImageView android:id="@+id/mesa_settings_home_drawer" android:background="?android:selectableItemBackgroundBorderless" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_gravity="center_vertical" android:src="@drawable/sesl_ic_search_api" android:tint="#797979" android:tooltipText="@string/mesa_settings" />
-    </LinearLayout>
+    <FrameLayout android:id="@+id/mesa_header_home_drawer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingTop="@dimen/mesa_tb_drawer_padding_top" android:paddingHorizontal="@dimen/mesa_tb_drawer_padding_horizontal" android:paddingBottom="@dimen/mesa_tb_drawer_padding_bottom" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent">
+        <ImageButton android:id="@+id/mesa_settings_home_drawer" android:background="?actionBarItemBackground" android:layout_width="@dimen/mesa_tb_drawer_header_icon_dimen" android:layout_height="@dimen/mesa_tb_drawer_header_icon_dimen" android:layout_gravity="center_vertical|end" android:src="@drawable/mesa_tb_ic_settings_drawer" android:tint="@color/mesa_tb_drawer_things_color" android:contentDescription="@string/mesa_settings" android:tooltipText="@string/mesa_settings" />
+        <TextView android:id="@+id/mesa_settings_badge_home_drawer" android:layout_width="@dimen/sesl_menu_item_badge_size" android:layout_height="@dimen/sesl_menu_item_badge_size" android:layout_marginTop="7.0dip" android:layout_gravity="center_vertical|end" android:background="@drawable/sesl_noti_badge" android:focusable="false" android:clickable="false" android:visibility="gone" android:duplicateParentState="true" android:importantForAccessibility="no" android:gravity="center" android:textSize="@dimen/sesl_menu_item_badge_text_size" android:textColor="@color/sesl_menu_badge_text_color" />
+    </FrameLayout>
 
-
-    <ScrollView
-        android:id="@+id/mesa_scrollview_home_drawer"
-        android:layout_marginTop="16.0dip"
+    <com.samsung.android.ui.recyclerview.widget.SeslRecyclerView
+        android:id="@+id/mesa_recyclerview_home_drawer"
         android:layout_width="fill_parent"
         android:layout_height="0.0dip"
         android:layout_weight="1"
+        android:scrollbars="vertical"
         app:layout_constraintTop_toBottomOf="@id/mesa_header_home_drawer"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="24.0dip"
-            android:text="Cantami, o diva, del Pelìde Achille
-l’ira funesta che infiniti addusse
-lutti agli achei , molte anzi tempo all’orco
-generose travolse alme d’eroi,
-e di cani e d’augelli orrido pasto
-lor salme abbandonò (così di giove
-l’alto consiglio s’adempia ) , da quando
-primamente disgiunse aspra contesa
-il re de’ prodi Atride e il divo Achille."
-            android:textSize="35sp"/>
-
-    </ScrollView>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

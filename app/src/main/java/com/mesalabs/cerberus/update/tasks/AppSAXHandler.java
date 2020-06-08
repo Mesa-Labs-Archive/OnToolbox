@@ -6,7 +6,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import com.mesalabs.cerberus.update.data.AppData;
-import com.mesalabs.on.toolbox.utils.LogUtils;
+import com.mesalabs.on.workshop.utils.LogUtils;
 
 /*
  * Cerberus Core App

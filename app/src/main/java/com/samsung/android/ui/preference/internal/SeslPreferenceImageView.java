@@ -6,7 +6,7 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.mesalabs.on.toolbox.R;
+import com.mesalabs.on.workshop.R;
 
 /*
  * Cerberus Core App

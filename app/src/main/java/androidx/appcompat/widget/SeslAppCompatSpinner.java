@@ -36,8 +36,8 @@ import androidx.appcompat.view.menu.ShowableListMenu;
 import androidx.core.view.TintableBackgroundView;
 import androidx.core.view.ViewCompat;
 
-import com.mesalabs.on.toolbox.R;
-import com.mesalabs.on.toolbox.utils.LogUtils;
+import com.mesalabs.on.workshop.R;
+import com.mesalabs.on.workshop.utils.LogUtils;
 import com.samsung.android.ui.app.SeslAlertDialog;
 
 /*

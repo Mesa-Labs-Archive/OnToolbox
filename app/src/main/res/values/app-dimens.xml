@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="mesa_widget_badge_size">17.0dip</dimen>
+    <dimen name="mesa_widget_badge_text_size">11.0dip</dimen>
+
+    <dimen name="mesa_tb_home_swipe_refresh_offset">64.0dip</dimen>
+
     <dimen name="mesa_tb_drawer_bg_radius">26.0dip</dimen>
+    <dimen name="mesa_tb_drawer_divider_size">1.0px</dimen>
+
+    <dimen name="mesa_tb_drawer_padding_top">24.0dip</dimen>
+    <dimen name="mesa_tb_drawer_padding_bottom">16.0dip</dimen>
+    <dimen name="mesa_tb_drawer_padding_horizontal">32.0dip</dimen>
+    <dimen name="mesa_tb_drawer_header_icon_dimen">32.0dip</dimen>
+
+    <dimen name="mesa_tb_drawer_item_divider_size">14.0dip</dimen>
+    <dimen name="mesa_tb_drawer_item_text_size">18.0sp</dimen>
+
+    <dimen name="mesa_tb_app_item_icon_size">54.0dip</dimen>
+    <dimen name="mesa_tb_app_item_icon_margin_vertical">12.0dip</dimen>
+    <dimen name="mesa_tb_app_item_icon_margin_end">16.0dip</dimen>
+    <dimen name="mesa_tb_app_item_text_padding_vertical">14.0dip</dimen>
 </resources>

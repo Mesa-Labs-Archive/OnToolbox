@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="mesa_tb_icon_drawer">
+        <item>@drawable/mesa_tb_ic_apps_drawer</item>
+        <item>@drawable/mesa_tb_ic_apps_drawer</item>
+        <item></item>
+        <item>@drawable/mesa_tb_ic_info_drawer</item>
+    </array>
+    <string-array name="mesa_tb_title_drawer">
+        <item>Samsung apps (empty)</item>
+        <item>Samsung apps (full)</item>
+        <item></item>
+        <item>@string/mesa_tb_device_info</item>
+    </string-array>
+    <string-array name="mesa_tb_tag_drawer">
+        <item>sammy_empty</item>
+        <item>sammy_full</item>
+        <item></item>
+        <item>about_device</item>
+    </string-array>
+    <string-array name="mesa_tb_fragment_drawer">
+        <item>com.mesalabs.on.workshop.fragment.home.SammyAppsListFragmentEmpty</item>
+        <item>com.mesalabs.on.workshop.fragment.home.SammyAppsListFragmentFull</item>
+        <item></item>
+        <item>com.mesalabs.on.workshop.fragment.home.DeviceInfoFragment</item>
+    </string-array>
+    <integer-array name="mesa_tb_internet_drawer">
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+</resources>

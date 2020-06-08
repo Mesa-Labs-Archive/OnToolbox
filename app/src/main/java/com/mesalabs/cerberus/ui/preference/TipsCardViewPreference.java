@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
-import com.mesalabs.on.toolbox.R;
+import com.mesalabs.on.workshop.R;
 import com.samsung.android.ui.preference.PreferenceViewHolder;
 import com.samsung.android.ui.preference.SeslPreference;
 

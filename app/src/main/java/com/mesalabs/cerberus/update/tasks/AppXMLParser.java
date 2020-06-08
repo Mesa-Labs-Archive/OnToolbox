@@ -7,7 +7,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import com.mesalabs.cerberus.update.data.AppData;
-import com.mesalabs.on.toolbox.utils.LogUtils;
+import com.mesalabs.on.workshop.utils.LogUtils;
 
 /*
  * Cerberus Core App

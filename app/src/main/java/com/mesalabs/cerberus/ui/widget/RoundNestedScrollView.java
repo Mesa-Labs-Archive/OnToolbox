@@ -5,8 +5,8 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 
-import com.mesalabs.on.toolbox.R;
-import com.mesalabs.on.toolbox.utils.LogUtils;
+import com.mesalabs.on.workshop.R;
+import com.mesalabs.on.workshop.utils.LogUtils;
 import com.mesalabs.cerberus.utils.ViewUtils;
 import com.samsung.android.ui.util.SeslRoundedCorner;
 import com.samsung.android.ui.widget.SeslNestedScrollView;

@@ -10,7 +10,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.ScaleAnimation;
 
-import com.mesalabs.on.toolbox.R;
+import com.mesalabs.on.workshop.R;
 
 /*
  * Cerberus Core App

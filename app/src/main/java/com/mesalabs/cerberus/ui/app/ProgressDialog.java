@@ -14,7 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import com.mesalabs.on.toolbox.R;
+import com.mesalabs.on.workshop.R;
 import com.samsung.android.ui.app.SeslAlertDialog;
 import com.samsung.android.ui.widget.SeslProgressBar;
 

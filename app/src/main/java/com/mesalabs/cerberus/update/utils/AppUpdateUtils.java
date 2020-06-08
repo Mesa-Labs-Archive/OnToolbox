@@ -13,12 +13,11 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
-import com.mesalabs.on.toolbox.OnToolboxApp;
-import com.mesalabs.on.toolbox.R;
+import com.mesalabs.on.workshop.OnWorkshopApp;
 import com.mesalabs.cerberus.update.data.AppData;
 import com.mesalabs.cerberus.update.download.AppDownload;
 import com.mesalabs.cerberus.update.tasks.AppXMLParser;
-import com.mesalabs.on.toolbox.utils.LogUtils;
+import com.mesalabs.on.workshop.utils.LogUtils;
 
 /*
  * Cerberus Core App
@@ -39,7 +38,7 @@ import com.mesalabs.on.toolbox.utils.LogUtils;
 public class AppUpdateUtils {
     private static final String TAG = "AppUpdateUtils";
     private static final String DOWNLOAD_DIR = "updates";
-    private static final String UPDATE_XML = "https://gitlab.com/BlackMesa123/otatest/-/raw/eb5d8466245068531f889f472eb64aece46bd519/testmanifest.xml";
+    private static final String UPDATE_XML = "https://gitlab.com/BlackMesa123/otatest/-/raw/master/testmanifest.xml";
 
     public static final int STATE_NO_UPDATES = 1;
     public static final int STATE_NEW_VERSION_AVAILABLE = 2;
@@ -85,7 +84,7 @@ public class AppUpdateUtils {
         int newStatus = STATE_ERROR;
 
         if (appsDataArr != null && !appsDataArr.isEmpty()) {
-            int currentVer = OnToolboxApp.getAppVersionCode();
+            int currentVer = OnWorkshopApp.getAppVersionCode();
             int onlineVer = 0;
 
             for (int i = 0; i < appsDataArr.size(); i++) {

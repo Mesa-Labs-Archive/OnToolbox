@@ -18,8 +18,8 @@ import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 
-import com.mesalabs.on.toolbox.R;
-import com.mesalabs.on.toolbox.utils.LogUtils;
+import com.mesalabs.on.workshop.R;
+import com.mesalabs.on.workshop.utils.LogUtils;
 import com.mesalabs.cerberus.utils.Utils;
 import com.samsung.android.ui.widget.SeslProgressBar;
 import com.samsung.android.ui.widget.SeslSwitch;

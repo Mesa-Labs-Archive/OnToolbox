@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@+id/mesa_drawer_parent_homeactivity" android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="?round_and_bgColor"
+<FrameLayout android:id="@+id/mesa_drawer_parent_homeactivity" android:layout_width="fill_parent" android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.drawerlayout.widget.DrawerLayout android:id="@+id/mesa_drawerlayout_homeactivity" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <com.mesalabs.cerberus.ui.widget.RoundFrameLayout android:id="@+id/mesa_content_main_homeactivity" android:layout_width="fill_parent" android:layout_height="fill_parent" android:splitMotionEvents="false" app:roundedCorners="bottom_left|bottom_right" app:cornersStroke="false">
+    <androidx.drawerlayout.widget.DrawerLayout android:id="@+id/mesa_drawerlayout_homeactivity" android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="?round_and_bgColor">
+        <com.mesalabs.cerberus.ui.widget.RoundFrameLayout android:id="@+id/mesa_content_main_homeactivity" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1" android:orientation="vertical" android:splitMotionEvents="false" app:roundedCorners="bottom_left|bottom_right" app:cornersStroke="false">
             <com.samsung.android.ui.coordinatorlayout.widget.SeslCoordinatorLayout android:id="@+id/mesa_coordinatorlayout_baseactivity" android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="?round_and_bgColor">
                 <include layout="@layout/mesa_view_appbar_layout"/>
-                <FrameLayout android:id="@+id/mesa_content_container_homeactivity" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/sesl_appbar_scrolling_view_behavior" />
+                <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingBottom="@dimen/sesl_list_divider_height" app:layout_behavior="@string/sesl_appbar_scrolling_view_behavior">
+                    <com.mesalabs.on.workshop.ui.widget.ToolboxSwipeRefreshLayout android:id="@+id/mesa_drawer_swiperefresh_homeactivity" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <FrameLayout android:id="@+id/mesa_content_container_homeactivity" android:layout_width="fill_parent" android:layout_height="fill_parent" android:alpha="0.0" />
+                    </com.mesalabs.on.workshop.ui.widget.ToolboxSwipeRefreshLayout>
+                </FrameLayout>
             </com.samsung.android.ui.coordinatorlayout.widget.SeslCoordinatorLayout>
         </com.mesalabs.cerberus.ui.widget.RoundFrameLayout>
         <View android:id="@+id/mesa_drawer_dim_homeactivity" android:background="@color/mesa_tb_drawer_dim_color" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:alpha="0.0" />
         <FrameLayout android:layout_gravity="start" android:id="@+id/mesa_drawer_fragment_homeactivity" android:layout_width="fill_parent" android:layout_height="fill_parent" />
     </androidx.drawerlayout.widget.DrawerLayout>
+    <ViewStub android:id="@+id/mesa_home_divider_homeactivity" android:layout="@layout/mesa_tb_view_home_divider_layout" android:layout_width="wrap_content" android:layout_height="fill_parent" />
 </FrameLayout>
