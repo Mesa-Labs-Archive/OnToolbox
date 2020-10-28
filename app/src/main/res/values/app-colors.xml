@@ -10,9 +10,9 @@
     <color name="mesa_tb_progress_control_color_normal_dark">#4D09BCEE</color>
     <color name="mesa_tb_progress_control_color_normal_light">#4D09BCEE</color>
 
-    <color name="mesa_tb_drawer_dim_color">#59000000</color>
+    <color name="mesa_tb_drawer_dim_color">#33000000</color>
+    <color name="mesa_tb_drawer_dim_sys_color">@color/sesl_round_and_bgcolor_light</color>
 
     <color name="mesa_tb_drawer_things_color">#797979</color>
-    <color name="mesa_tb_drawer_divider_color">#BDBDBD</color>
     <color name="mesa_tb_drawer_item_divider_color">#D4D4D4</color>
 </resources>

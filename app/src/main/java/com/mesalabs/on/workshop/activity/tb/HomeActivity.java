@@ -2,15 +2,21 @@ package com.mesalabs.on.workshop.activity.tb;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Display;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewStub;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
@@ -59,6 +65,7 @@ public class HomeActivity extends BaseAppBarActivity implements SeslSwipeRefresh
             boolean available = status == AppUpdateUtils.STATE_NEW_VERSION_AVAILABLE;
             PreferencesUtils.setIsAppUpdateAvailable(available);
             mDrawerFragment.setUpdateAvailable(available);
+            setHomeAsUpButtonBadge(available);
         }
     };
 
@@ -74,7 +81,6 @@ public class HomeActivity extends BaseAppBarActivity implements SeslSwipeRefresh
     private FrameLayout mHomeFragmentContainer;
     private View mHomeDrawerDim;
     private FrameLayout mHomeDrawerContainer;
-    private View mHomeDrawerDivider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,7 +125,7 @@ public class HomeActivity extends BaseAppBarActivity implements SeslSwipeRefresh
         initViews();
         initDrawer();
 
-        //onRefresh();
+        onRefresh();
     }
 
     @Override
@@ -138,17 +144,61 @@ public class HomeActivity extends BaseAppBarActivity implements SeslSwipeRefresh
 
     @Override
     public void onRefresh() {
+        // ux
         mSwipeRefreshLayout.setRefreshing(false);
         appBar.setTitleText(mAppName, "");
-        ProgressDialog.show(mContext, "", "", true, false);
+        appBar.setSubtitleText("");
+        if (mHomeFragmentContainer.getAlpha() == 1.0f) {
+            mHomeFragmentContainer.startAnimation(mFadeOutAnim);
+        }
+
+
+        final ProgressDialog dialog = ProgressDialog.show(mContext, "", "Downloading apps list...", true, false);
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dialog.dismiss();
+                replaceFragmentInActivity(PreferencesUtils.getLatestFragment(), true);
+            }
+        }, 2000);
     }
 
 
     private void initAnimationFields() {
         mFadeInAnim = new AlphaAnimation(0.0f, 1.0f);
         mFadeInAnim.setDuration(250);
+        mFadeInAnim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                mHomeFragmentContainer.setAlpha(1.0f);
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                mHomeFragmentContainer.setAlpha(1.0f);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) { }
+        });
         mFadeOutAnim = new AlphaAnimation(1.0f, 0.0f);
         mFadeOutAnim.setDuration(250);
+        mFadeOutAnim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                mHomeFragmentContainer.setAlpha(1.0f);
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                mHomeFragmentContainer.setAlpha(0.0f);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) { }
+        });
     }
 
     private void initViews() {
@@ -160,12 +210,13 @@ public class HomeActivity extends BaseAppBarActivity implements SeslSwipeRefresh
         mSwipeRefreshLayout = findViewById(R.id.mesa_drawer_swiperefresh_homeactivity);
         mHomeFragmentContainer = findViewById(R.id.mesa_content_container_homeactivity);
         mHomeDrawerContainer = findViewById(R.id.mesa_drawer_fragment_homeactivity);
-        mHomeDrawerDivider = ((ViewStub) findViewById(R.id.mesa_home_divider_homeactivity)).inflate();
 
         int offset = getResources().getDimensionPixelSize(R.dimen.mesa_tb_home_swipe_refresh_offset);
         mSwipeRefreshLayout.setProgressViewOffset(true, offset, offset + 1);
         mSwipeRefreshLayout.setColorSchemeResources(R.color.mesa_tb_primary_color_light);
         mSwipeRefreshLayout.setOnRefreshListener(this);
+
+        mHomeFragmentContainer.setAlpha(0.0f);
 
         ViewUtils.updateListBothSideMargin(this, mHomeFragmentContainer);
     }
@@ -182,6 +233,25 @@ public class HomeActivity extends BaseAppBarActivity implements SeslSwipeRefresh
         mDrawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
             @Override
             public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
+                if (slideOffset < 0.0f) {
+                    slideOffset = 0.0f;
+                }
+
+                moveHomeMainParent();
+                setStatusBarAndNavigationBarColor(slideOffset);
+                mHomeDrawerDim.setAlpha(slideOffset);
+            }
+
+            @Override
+            public void onDrawerOpened(@NonNull View drawerView) { }
+
+            @Override
+            public void onDrawerClosed(@NonNull View drawerView) { }
+
+            @Override
+            public void onDrawerStateChanged(int newState) { }
+
+            private void moveHomeMainParent() {
                 int fragmentWidth = mHomeDrawerContainer.getWidth();
                 float xAxisPos = mHomeDrawerContainer.getX();
                 float measuredWidth;
@@ -203,18 +273,22 @@ public class HomeActivity extends BaseAppBarActivity implements SeslSwipeRefresh
                 }
 
                 mHomeMainParent.setTranslationX(xAxisPos);
-                mHomeDrawerDim.setAlpha(slideOffset);
-                mHomeDrawerDivider.setAlpha(slideOffset);
             }
 
-            @Override
-            public void onDrawerOpened(@NonNull View drawerView) { }
+            private void setStatusBarAndNavigationBarColor(float slideOffset) {
+                Window window = getWindow();
 
-            @Override
-            public void onDrawerClosed(@NonNull View drawerView) { }
+                int dimColor = getResources().getColor(R.color.mesa_tb_drawer_dim_color, null);
+                int color = getResources().getColor(R.color.mesa_tb_drawer_dim_sys_color, null);
+                int scrimColor = (((int) (((float) ((Color.BLACK & dimColor) >>> 24)) * slideOffset)) << 24) | (dimColor & 0x00FFFFFF);
 
-            @Override
-            public void onDrawerStateChanged(int newState) { }
+                if (scrimColor != 0) {
+                    color = scrimColor;
+                }
+
+                window.setStatusBarColor(color);
+                window.setNavigationBarColor(color);
+            }
         });
 
         updateDrawerLayout();
@@ -279,13 +353,11 @@ public class HomeActivity extends BaseAppBarActivity implements SeslSwipeRefresh
             }
 
             mHomeDrawerDim.setAlpha(1.0f);
-            mHomeDrawerDivider.setAlpha(1.0f);
 
             mDrawerLayout.invalidate();
         } else {
             mHomeMainParent.setTranslationX(0.0f);
             mHomeDrawerDim.setAlpha(0.0f);
-            mHomeDrawerDivider.setAlpha(0.0f);
         }
     }
 
@@ -309,9 +381,30 @@ public class HomeActivity extends BaseAppBarActivity implements SeslSwipeRefresh
             transaction.replace(R.id.mesa_content_container_homeactivity, fragment);
             transaction.commit();
             mFragmentManager.executePendingTransactions();
+
+            if (mHomeFragmentContainer.getAlpha() == 0.0f) {
+                mHomeFragmentContainer.startAnimation(mFadeInAnim);
+            }
         }
 
         closeDrawer();
+    }
+
+    private void setHomeAsUpButtonBadge(boolean visible) {
+        ViewGroup homeAsUpButtonContainer = findViewById(R.id.mesa_homeasupcontainer_appbarlayout);
+        ViewGroup homeAsUpBadgeBackground = (ViewGroup) ((LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.mesa_view_menu_button_badge_layout, homeAsUpButtonContainer, false);
+        TextView homeAsUpBadgeText = (TextView) homeAsUpBadgeBackground.getChildAt(0);
+
+        homeAsUpBadgeText.setTextSize(0, (float) ((int) this.getResources().getDimension(R.dimen.sesl_menu_item_badge_text_size)));
+        homeAsUpButtonContainer.addView(homeAsUpBadgeBackground);
+
+        if (visible) {
+            homeAsUpBadgeText.setText("N");
+            homeAsUpBadgeBackground.setVisibility(View.VISIBLE);
+        } else {
+            homeAsUpBadgeText.setText("");
+            homeAsUpBadgeBackground.setVisibility(View.GONE);
+        }
     }
 
 }

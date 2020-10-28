@@ -79,6 +79,7 @@ public class BaseAppsListFragment extends Fragment {
         mListView.addItemDecoration(decoration);
         decoration.setDivider(mContext.getDrawable(divider.resourceId));
         mListView.setItemAnimator(null);
+        mListView.seslSetFastScrollerEnabled(true);
         mListView.seslSetFillBottomEnabled(true);
         mListView.seslSetGoToTopEnabled(true);
         mListView.seslSetLastOutlineStrokeEnabled(false);

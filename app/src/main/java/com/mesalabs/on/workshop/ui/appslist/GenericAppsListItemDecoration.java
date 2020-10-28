@@ -27,7 +27,6 @@ import com.samsung.android.ui.util.SeslRoundedCorner;
 public class GenericAppsListItemDecoration extends SeslRecyclerView.ItemDecoration {
     private BaseAppsListFragment mListFragment;
     private SeslRoundedCorner mSeslRoundedCornerTop;
-    private SeslRoundedCorner mSeslStrokeRoundedCornerTop;
     private SeslRoundedCorner mSeslRoundedCornerBottom;
     private Drawable mDivider;
     private int mDividerHeight;
@@ -39,16 +38,14 @@ public class GenericAppsListItemDecoration extends SeslRecyclerView.ItemDecorati
             throw new CerberusException("Fragment is null!!!");
         }
 
-        mSeslRoundedCornerTop = new SeslRoundedCorner(mListFragment.getContext(), false, true);
+        mSeslRoundedCornerTop = new SeslRoundedCorner(mListFragment.getContext(), true);
         mSeslRoundedCornerTop.setRoundedCornerColor(15 /* all */,
                 mListFragment.getResources().getColor(Utils.isNightMode(mListFragment.getContext()) ?
                         R.color.sesl_round_and_bgcolor_dark :
                         R.color.sesl_round_and_bgcolor_light,
                         null));
         mSeslRoundedCornerTop.setRoundedCorners(3 /* top_left|top_right */);
-        mSeslStrokeRoundedCornerTop = new SeslRoundedCorner(mListFragment.getContext());
-        mSeslStrokeRoundedCornerTop.setRoundedCorners(3 /* top_left|top_right */);
-        mSeslRoundedCornerBottom = new SeslRoundedCorner(mListFragment.getContext(), !Utils.isNightMode(mListFragment.getContext()), true);
+        mSeslRoundedCornerBottom = new SeslRoundedCorner(mListFragment.getContext(), true);
         mSeslRoundedCornerBottom.setRoundedCornerColor(15 /* all */,
                 mListFragment.getResources().getColor(Utils.isNightMode(mListFragment.getContext()) ?
                                 R.color.sesl_round_and_bgcolor_dark :
@@ -84,18 +81,13 @@ public class GenericAppsListItemDecoration extends SeslRecyclerView.ItemDecorati
 
             if (!viewHolder.getIsItem()) {
                 if (recyclerView.getChildAt(i + 1) != null)
-                    mSeslStrokeRoundedCornerTop.drawRoundedCorner(recyclerView.getChildAt(i + 1), canvas);
+                    mSeslRoundedCornerTop.drawRoundedCorner(recyclerView.getChildAt(i + 1), canvas);
                 if (recyclerView.getChildAt(i - 1) != null)
                     mSeslRoundedCornerBottom.drawRoundedCorner(recyclerView.getChildAt(i - 1), canvas);
             }
         }
 
-        // if top isn't reached, draw non-stroke top rounded corners
-        if (canScrollUp(recyclerView)) {
-            mSeslRoundedCornerTop.drawRoundedCorner(canvas);
-        } else {
-            mSeslStrokeRoundedCornerTop.drawRoundedCorner(canvas);
-        }
+        mSeslRoundedCornerTop.drawRoundedCorner(canvas);
     }
 
     private boolean canScrollUp(SeslRecyclerView recyclerView) {

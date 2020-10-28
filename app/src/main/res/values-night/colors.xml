@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="sesl_dialog_text_body_color">#E5E5E5</color>
+
     <color name="mesa_widget_body_text_color">@color/sesl_dialog_body_text_color_dark</color>
 
     <color name="mesa_layoutpref_help_image_bg_color">#252525</color>

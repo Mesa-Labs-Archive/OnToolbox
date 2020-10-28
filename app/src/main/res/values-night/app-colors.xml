@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="mesa_tb_drawer_dim_color">#CC000000</color>
-    <color name="mesa_tb_drawer_divider_color">#00BDBDBD</color>
+    <color name="mesa_tb_drawer_dim_sys_color">@color/sesl_round_and_bgcolor_dark</color>
     <color name="mesa_tb_drawer_item_divider_color">#4D4D4D</color>
 </resources>

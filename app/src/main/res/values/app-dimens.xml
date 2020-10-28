@@ -6,7 +6,6 @@
     <dimen name="mesa_tb_home_swipe_refresh_offset">64.0dip</dimen>
 
     <dimen name="mesa_tb_drawer_bg_radius">26.0dip</dimen>
-    <dimen name="mesa_tb_drawer_divider_size">1.0px</dimen>
 
     <dimen name="mesa_tb_drawer_padding_top">24.0dip</dimen>
     <dimen name="mesa_tb_drawer_padding_bottom">16.0dip</dimen>
