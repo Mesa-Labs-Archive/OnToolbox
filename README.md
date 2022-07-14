@@ -1,4 +1,4 @@
-![Banner](img/banner.png?raw=true)
+![Banner](app/src/main/res/mipmap-xxhdpi/ic_launcher.png?raw=true)
 =====
 
 This repo contains On Toolbox app (A.K.A. ROM add-ons manager).
